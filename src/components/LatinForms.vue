@@ -11,7 +11,7 @@
             <div v-if="selectedWord != null" class="latin-form-meaning">{{ selectedWord.meaning }}</div>
             <div>
                 <span class="latin-form">{{ whichForm }}</span>
-                <span class="latin-form-answer"><input v-model="latinFormsAnswer" class="latin-form-input"/></span>
+                <span class="latin-form-answer"><input v-model="latinFormsAnswer" ref="latin_forms_answer" class="latin-form-input"/></span>
             </div>
             <button v-on:click="getNextWord()" class="btn-answer">Lock in Answer</button>
         </div>
@@ -53,25 +53,27 @@
                     //we already have an answer! check it.
                     //increment our question count
                     this.latinFormsScore.total++;
+                    let lowerAnswer = this.latinFormsAnswer.toLowerCase();
 
                     switch (this.form) {
                         case 0:
-                            if (this.latinFormsAnswer === this.selectedWord.second) {
+                            if (lowerAnswer === this.selectedWord.second) {
                                 this.latinFormsScore.correct++;
                             }
                             break;
                         case 1:
-                            if (this.latinFormsAnswer === this.selectedWord.third) {
+                            if (lowerAnswer === this.selectedWord.third) {
                                 this.latinFormsScore.correct++;
                             }
                         case 2:
-                            if (this.latinFormsAnswer === this.selectedWord.fourth) {
+                            if (lowerAnswer === this.selectedWord.fourth) {
                                 this.latinFormsScore.correct++;
                             }
                             break;
                     }
 
                     this.latinFormsAnswer = '';
+                    //this.$refs.latin_forms_answer.$el.focus();
                 }
 
                 axios.post("https://www.rdrand.com/API/GenerateUInt")
