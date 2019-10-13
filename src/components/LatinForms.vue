@@ -21,11 +21,13 @@
         data: function() {
             return {
                 phrases: [
-                    {word: 'pono', meaning: 'to put, place', second: 'ponere', third: 'poni', fourth: 'pontus'},
-                    {word: '', meaning: '', second: '', third: '', fourth: ''},
-                    {word: '', meaning: '', second: '', third: '', fourth: ''},
-                    {word: '', meaning: '', second: '', third: '', fourth: ''},
-                    {word: '', meaning: '', second: '', third: '', fourth: ''}
+                    {word: 'pono', meaning: 'to put, place', second: 'ponere', third: 'posui', fourth: 'positus'},
+                    {word: 'mitto', meaning: 'to send', second: 'mittere', third: 'misi', fourth: 'missus'},
+                    {word: 'claudo', meaning: 'to close', second: 'claudere', third: 'clausi', fourth: 'clausus'},
+                    {word: 'gero', meaning: 'to wage, carry on', second: 'gerere', third: 'gessi', fourth: 'gestus'},
+                    {word: 'cedo', meaning: 'to yield, give way', second: 'cedere', third: 'cessi', fourth: 'cessus'},
+                    {word: 'premo', meaning: 'to press, push', second: 'premere', third: 'pressi', fourth: 'pressus'},
+                    {word: 'scribo', meaning: 'to write', second: 'scribere', third: 'scripsi', fourth: 'scriptus'}
                 ],
                 selectedWord: null,
                 randomNumber: 0,
