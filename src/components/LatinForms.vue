@@ -1,14 +1,15 @@
 <template>
     <div class="latin-forms" id="latinApp">
         <h1>Latin Forms</h1>
-        <div>
+        <button v-on:click="getNextWord()" v-show="!showLatin">Start</button>
+        <div v-show="showLatin">
             <div>{{ selectedWord.word }}</div>
             <div>{{ selectedWord.meaning }}</div>
             <div>
                 {{ whichForm }}
             </div>
+            <button v-on:click="getNextWord()">Lock in Answer</button>
         </div>
-        <button v-on:click="getNextWord()">Lock in Answer</button>
     </div>
 </template>
 
@@ -30,7 +31,8 @@
                 randomNumber: 0,
                 index: 0,
                 form: 0,
-                whichForm: '2nd'
+                whichForm: '2nd',
+                showLatin: false
             }
         },
         methods: {
